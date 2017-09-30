@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'cms/css/login_.css' %}">
+  <title>登录</title>
+</head>
+<body>
+<section class="container">
+  <form id="login" class="login-con" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="user_name" class="user-name-label">
+        <span class="label-img"><img src="{% static 'cms/img/user.png' %}"></span>
+        <span class="label-name">用户名</span>
+      </label>
+      <input type="text" id="user_name" class="user-input" name='username'>
+    </div>
+    <div class="form-group">
+      <label for="user_password" class="user-name-label">
+        <span class="label-img"><img src="{% static 'cms/img/password.png' %}"></span>
+        <span class="label-name">密&nbsp&nbsp&nbsp码</span>
+      </label>
+      <input type="password" id="user_password" class="user-input" name='password'>
+    </div>
+
+
+    <div class="form-group border-none form-button">
+      <button type="submit" class="btn-default">登&nbsp&nbsp&nbsp录</button>
+    </div>
+
+  </form>
+</section>
+
+
+</body>
+</html>

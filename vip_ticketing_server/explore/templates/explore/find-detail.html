@@ -1,0 +1,107 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--不识别电话号码和邮箱-->
+  <meta name="format-detection" content="telephone=no; email=no"/>
+  <!--网站开启对 web app 程序的支持-->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <!--状态栏颜色-->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!--放置主屏幕上 icon-->
+  <link rel="apple-touch-icon-precomposed" href='{% static "assets/i/app-icon72x72@2x.png" %}'>
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- 使用 webkit 引擎渲染 -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>VIP尊享生活--发现详情</title>
+  <!--CSS-->
+  <link rel="stylesheet" href='{% static "assets/css/amazeui.min.css" %}'>
+  <link rel="stylesheet" href='{% static "assets/css/common.css" %}'>
+  <!--circle CSS-->
+  <link rel="stylesheet" href='{% static "assets/css/detail.css" %}'>
+</head>
+<body ontouchstart>
+<!-- main-content-start -->
+<section class="find-main">
+  <article>
+    <div class="am-padding-0 am-u-sm-12 ui-border-b">
+      <div class="find-tit  am-u-sm-12">
+        <h2 class="am-padding-0 am-u-sm-11 explore-tit"></h2>
+        <div class="am-u-sm-1 am-padding-right-0 heart-right" id="heart">
+        </div>
+        <time class="am-u-sm-12 am-padding-0 explore-time"></time>
+      </div>
+      <section class="find-text-con am-u-sm-12">
+        <div class="explore-video" style="width: 100%; height: auto;">
+        </div>
+        <div class="explore-text">
+
+        </div>
+      </section>
+    </div>
+  </article>
+  <!--comment-->
+  <section>
+    <div class="am-u-sm-12 comment">
+      <div class="am-u-sm-12 am-padding-0 comment-tit" id="auchor">
+        <img src="{% static 'assets/i/comment@3x.png' %}">
+        <span>评论<span class="margin-left">（<i class="comment-count">0</i>）</span></span>
+      </div>
+      <!-- comment-template -->
+      <script type="text/template" id="explore_comments_template">
+        <div class="comment-con am-u-am-12 am-padding-0 comment-border">
+          <div class="am-u-sm-2 am-padding-0 comment-avatar">
+            <img src="" alt="" class="post-photo">
+          </div>
+          <div class="am-u-sm-10 am-padding-0 name-time">
+            <div class="comment-name">
+
+            </div>
+            <span class="comment-date"></span>
+          </div>
+          <div class="am-u-sm-12 am-padding-0 comment-text">
+            <p></p>
+          </div>
+        </div>
+      </script>
+    </div>
+  </section>
+</section>
+
+<!--footer-->
+<footer class="am-g c-detail-footer ui-border-t">
+  <div class="am-input-group">
+    <span class="input-con ui-border">
+      <input type="text" class="am-form-field " id="explore_input" placeholder="说点儿什么吧?" autocomplete="off">
+    </span>
+    <span class="am-input-group-btn">
+      <button class="am-btn am-btn-default am-btn-primary" type="button" id="comment_button">发表</button>
+    </span>
+  </div>
+</footer>
+
+<script src='{% static "assets/js/jquery.min.js" %}'></script>
+<script src='{% static "assets/js/amazeui.min.js" %}'></script>
+<!--detail-->
+<script src='{% static "assets/js/constants.js" %}'></script>
+<script src='{% static "assets/js/find.js" %}'></script>
+</body>
+</html>

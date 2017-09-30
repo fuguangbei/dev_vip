@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--不识别电话号码和邮箱-->
+  <meta name="format-detection" content="telephone=no; email=no"/>
+  <!--网站开启对 web app 程序的支持-->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <!--状态栏颜色-->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!--放置主屏幕上 icon-->
+  <link rel="apple-touch-icon-precomposed" href='{% static "assets/i/app-icon72x72@2x.png" %}'>
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- 使用 webkit 引擎渲染 -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>宇航套餐</title>
+  <!--CSS-->
+  <link rel="stylesheet" href='{% static "assets/css/amazeui.min.css" %}'>
+  <link rel="stylesheet" href='{% static "assets/css/common.css" %}'>
+  <link rel="stylesheet" href='{% static "assets/css/detail.css" %}'>
+</head>
+
+<body>
+<!-- main-content-start -->
+<section>
+  <!--disney-cover-->
+  <header>
+    <div class="am-g disney-cover ui-border-b">
+      <img src='{% static "assets/i/cover.png" %}'>
+      <div class="d-cover-txt">
+        <div class="d-cover-tit"></div>
+        <div class="ticket-price">
+          <span class="tk-num align-left">¥<i></i>元</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--text-con-->
+  <section>
+    <div class="space-con am-u-sm-12">
+      <article>
+        <div class="bd-intro-tit tit-1">套餐介绍</div>
+        <div class="bd-intro-detail package-intro">
+        </div>
+        <div class="bd-intro-tit tit-2">购买须知</div>
+        <div class="bd-intro-detail space-margin purchase-notes">
+        </div>
+      </article>
+    </div>
+  </section>
+
+</section>
+<!--footer-->
+<footer>
+  <div class="am-g disney-footer ui-border-t">
+
+    <div class="am-u-sm-4 am-padding-0 icon-footer">
+      <div class="footer-heart-icon "></div>
+    </div>
+    <div class="am-u-sm-8 am-padding-0 button_footer">
+      <button type="button" class="am-btn am-btn-primary" data-am-modal="{target: '#my-alert'}" id="aerospace_button">立即购买</button>
+    </div>
+  </div>
+  <div class="am-modal am-modal-alert" tabindex="-1" id="my_alert">
+    <div class="am-modal-dialog">
+      <div class="am-modal-bd ui-border-b">
+        宇航套餐暂未开放购买,请先预约购票。
+      </div>
+      <div class="am-modal-footer">
+          <span class="ui-border-r am-modal-btn" data-am-modal-cancel>取消</span>
+          <a class="am-modal-href" href="tel:13908057981">致电预约</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src='{% static "assets/js/jquery.min.js" %}'></script>
+<script src='{% static "assets/js/amazeui.min.js" %}'></script>
+<!--detail-->
+<script src='{% static "assets/js/constants.js" %}'></script>
+<script src='{% static "assets/js/detail.js" %}'></script>
+</body>
+
+</html>

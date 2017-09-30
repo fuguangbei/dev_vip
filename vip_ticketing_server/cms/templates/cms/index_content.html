@@ -1,0 +1,53 @@
+{% load staticfiles %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			控制台
+			<small>系统数据总览</small>
+		</h1>
+	</section>
+
+	<!-- Main content -->
+	<section class="content" id='general'>
+		<div class="row">
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="info-box clickable" id='users'>
+					<span class="info-box-icon bg-yellow">
+						<i class="ion ion-ios-people-outline"></i>
+					</span>
+					<div class="info-box-content">
+						<span class="info-box-text">用户量</span>
+						<span class="info-box-number">{{ general_data.users }}</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="info-box clickable" id='orders'>
+					<span class="info-box-icon bg-green">
+						<i class="ion ion-ios-cart-outline"></i>
+					</span>
+					<div class="info-box-content">
+						<span class="info-box-text">订单量</span>
+						<span class="info-box-number">{{ general_data.orders }}</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="info-box clickable" id='sales'>
+					<span class="info-box-icon bg-blue">
+						<i class="ion ion-cash"></i>
+					</span>
+					<div class="info-box-content">
+						<span class="info-box-text">交易额</span>
+						<span class="info-box-number">{{ general_data.sales }}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!-- /.content -->
+
+</div>

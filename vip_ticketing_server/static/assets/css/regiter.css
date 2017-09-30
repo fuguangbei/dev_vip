@@ -1,0 +1,80 @@
+html,body{
+  width: 100%;
+  height: 100%;
+  background-color:#e9eaed;
+}
+.rg-con{
+  margin-top: 7rem;
+}
+.rg-con h1{
+  margin-bottom: 5em;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  color: #3987d5;
+  border: none!important;
+}
+.rg-con form{
+  width: 100%;
+}
+.put-in{
+  width: 100%;
+  line-height: 3rem!important;
+  border: none!important;
+}
+.ipt-phone{
+  border-top-left-radius:3px!important;
+  border-top-right-radius:3px!important;
+}
+.ipt-code{
+  margin-top: 1px;
+  border-bottom-left-radius:3px!important;
+  border-bottom-right-radius:3px!important;
+}
+.form-con{
+  position: relative;
+  line-height:1.5;
+}
+.put-in-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height:100%;
+  border: none;
+  background: none;
+
+}
+.put-in-btn:hover,.put-in-btn:focus,.put-in-btn:focus{
+  color:#3987d5;
+  outline: none;
+}
+.btn-blue{
+  width: 100%;
+  font-weight: bolder;
+  font-size: 1.8rem;
+  height: 4rem;
+  border-radius: 3px;
+}
+.btn-blue:hover,.btn-blue:focus,.btn-blue:active{
+  background-color:#369;
+}
+.rg-tips{
+  margin-top: 3em;
+  text-align: justify;
+}
+.rg-tips p{
+  margin: 0;
+  padding: 0;
+  color: #707480;
+  line-height:1.8;
+}
+.dl-text{
+  color: #222629;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.error {
+  color: orangered;
+  background-color: transparent;
+  position: absolute;
+}

@@ -1,0 +1,149 @@
+{% load staticfiles %}
+<!doctype html>
+<html >
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <!--不识别电话号码和邮箱-->
+  <meta name="format-detection" content="telephone=no; email=no"/>
+  <!--网站开启对 web app 程序的支持-->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <!--状态栏颜色-->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- 使用 webkit 引擎渲染 -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>VIP尊享生活</title>
+  <!--CSS-->
+  <link rel="stylesheet" href='{% static "assets/css/amazeui.min.css" %}'>
+  <link rel="stylesheet" href='{% static "assets/css/common.css" %}'>
+  <!--index CSS-->
+  <link rel="stylesheet" href='{% static "assets/css/app.css" %}'>
+  <link rel="stylesheet" href='{% static "assets/css/swiper.min.css" %}'>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ksyIGfaPjZthhNpvtiyOOQLEejsEFXAm"></script>
+
+</head>
+
+<body ontouchstart="">
+<!--top-nav-->
+<nav>
+  <div class="top-ping top-nav am-g top-nav-animated">
+    <!--dropdown-->
+    <div class="am-dropdown am-u-sm-10 nav-left" data-am-dropdown>
+      <a href="javascript:void(0);" class="am-u-sm-12 am-padding-0 am-dropdown-toggle" data-am-dropdown-toggle>
+        <img src='{% static "assets/i/icon-map-maker@3x.png" %}' alt="" class="">
+        <span class="position-text">上海</span>
+      </a>
+
+      <!--<ul class="am-dropdown-content">
+        <li class="city city-maker" id="doc-dropdown-close">上海</li>
+        <script type="text/template" id="city-template">
+          <li class="city"></li>
+        </script>
+      </ul>-->
+
+    </div>
+    <div id="allmap"></div>
+
+    <!--nav-right-->
+    <a href="#" class="am-u-sm-2 nav-right">
+      <img src='{% static "assets/i/icon-search@3x.png" %}' alt="">
+    </a>
+  </div>
+</nav>
+<div class="position-tips">
+  <div class="position-tips-text"></div>
+</div>
+<!-- slider -->
+<section>
+  <div class="swiper-container">
+    <div class="swiper-wrapper commercial-con">
+      <!--改st-->
+      <!--template-->
+      <script type="text/template" id="commercial_template">
+        <div class="swiper-slide">
+          <img data-src="about:blank" alt="" class="a-img swiper-lazy commercial-img-fade-in">
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </script>
+      <!--改ed-->
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- menu -->
+<section>
+  <div class="menu">
+    <div class="swiper-container2 ui-border-b">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src='{% static "assets/i/disney@3x.jpg" %}' alt="" id="disney_list"/>
+        </div>
+        <div class="swiper-slide">
+          <img src='{% static "assets/i/concert@3x.jpg" %}' alt="" id="concert_list"/>
+        </div>
+        <div class="swiper-slide">
+          <img src='{% static "assets/i/space@3x.jpg" %}' alt="" id="space_list"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- feature -->
+<section>
+  <ul class=" am-main-con am-u-sm-12 am-padding-0 feature-con">
+
+    <script type="text/template" id="feature_template">
+      <li class="am-u-sm-12 am-padding-0 ui-border-b">
+
+        <div class="am-u-sm-6 am-list-main">
+          <h2></h2>
+          <div class="border-blue">
+          </div>
+          <p class="am-intro-default"></p>
+        </div>
+
+        <div class="am-u-sm-6 am-list-thumb">
+          <div class="feature-img-con">
+            <img src="" alt="" class="a-img feature-img">
+          </div>
+          <!--<div class="price">-->
+            <!--<p class="now-price">¥<span class="price-num"></span></p>-->
+            <!--<p class="history-price">¥<span class="price-num"></span></p>-->
+          <!--</div>-->
+
+        </div>
+
+      </li>
+    </script>
+  </ul>
+</section>
+<script src='{% static "assets/js/jquery.min.js" %}'></script>
+<script src='{% static "assets/js/amazeui.min.js" %}'></script>
+<script src='{% static "assets/js/swiper.jquery.min.js" %}'></script>
+<!--index-->
+<script src='{% static "assets/js/constants.js" %}'></script>
+<script src='{% static "assets/js/index_.js" %}'></script>
+</body>
+
+</html>

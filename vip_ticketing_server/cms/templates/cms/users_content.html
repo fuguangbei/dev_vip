@@ -1,0 +1,121 @@
+{% load staticfiles %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			用户
+			<small>查看与管理用户资料</small>
+		</h1>
+	</section>
+
+	<!-- Main content -->
+	<section class="content" id='users'>
+		<div class="row">
+			<div class="col-md-8" id='user-list'>
+				<div class="box box-warning">
+					<div class="box-header with-border">
+						<h3 class="box-title">用户列表</h3>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type='button' data-widget='collapse'>
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<div class="box-body">
+						<div class="dataTables_wrapper form-inline dt-bootstrap">
+							<div class="row">
+								<div class="col-sm-12">
+									<table id="user-table" class='table table-bordered table-hover dataTable' role='grid'>
+										<thead>
+											<tr>
+												<th>昵称</th>
+												<th>手机号/账号</th>
+												<th>性别</th>
+												<th>邀请人</th>
+												<th>代理</th>
+												<th>总消费</th>
+											</tr>
+										</thead>
+										<tbody>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="overlay">
+						<i class="fa fa-refresh fa-spin"></i>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="box box-primary" id='control-container'>
+					<div class="box-header">
+						<h3 class="box-title">控制台</h3>
+					</div>
+					<div class="box-body">
+						<a class="btn btn-app" id='import-users' uploader='#import-user-uploader'>
+							<i class="fa fa-user-plus"></i>
+							导入用户
+						</a>
+						<input class='invisible-file-upload' id='import-user-uploader' type='file'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+
+</div>
+<div class="modal" id='confirm-import-users'>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">×</span></button>
+				<h4 class="modal-title">确认</h4>
+			</div>
+			<div class="modal-body">
+				<p>是否要导入以下<span target='number'></span>名用户? (手机号重复用户将被跳过)</p>
+				<table class='table table-bordered'>
+					<tbody>
+						<tr class='table-header'>
+							<th>手机号</th>
+							<th>昵称</th>
+							<th>性别</th>
+						</tr>
+						
+						<script type="text/template" id='import-user-template'>
+						<tr>
+							<th>{phone_number}</th>
+							<th>{nickname}</th>
+							<th>{gender}</th>
+						</tr>
+						</script>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary" id='confirm'>导入用户</button>
+			</div>
+		</div>
+	<!-- /.modal-content -->
+	</div>
+<!-- /.modal-dialog -->
+</div>
+<script type="text/template" id='user-table-item-template'>
+<tr role='row'>
+	<td class='user-info'>{nickname}</td>
+	<td>{phone_number}</td>
+	<td>{gender}</td>
+	<td class='user-info'>{promoter_name}</td>
+	<td agent={agent}>
+		{is_agent_text}
+	</td>
+	<td class='amount'>{amount}</td>
+</tr>
+</script>

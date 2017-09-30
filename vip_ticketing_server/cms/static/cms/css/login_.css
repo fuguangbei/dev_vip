@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-weight: 400;
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 14px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #194f85;
+  background: url("../img/bg.jpg") center no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+}
+
+.login-con {
+  position: absolute;
+  top: 30%;
+  left: 18%;
+}
+
+.form-group {
+  width: 22em;
+  height: 3.5em;
+  line-height: 4em;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.user-name-label {
+  width: 40%;
+  height: 100%;
+}
+
+.label-img {
+  width: 10%;
+  text-align: center;
+  display: inline-block;
+}
+
+.label-img img {
+  margin-top: -0.4rem;
+  width: 42%;
+  vertical-align: middle;
+}
+
+.user-input {
+  width: 60%;
+}
+
+.form-group input {
+  -webkit-appearance:textfield;
+  height:50%;
+  margin-left: 2em;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.form-group input:focus,.form-group input:active{
+  background: none;
+  outline: none;
+}
+
+.checkbox {
+  margin-left: 0 !important;
+  display: none;
+}
+
+.checkbox + label {
+  width: 19px;
+  height: 19px;
+  vertical-align: middle;
+  display: inline-block;
+  background: url("../img/nor.png") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.checkbox:checked + label {
+  background: url("../img/check.png") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.label-small {
+  line-height: 3.5em;
+  font-size: 12px;
+  margin-left: -0.2rem;
+}
+
+.border-none {
+  border-bottom: none !important;
+}
+
+.btn-default {
+  margin-top: 3em;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  height: 85%;
+  background: none;
+  border: 1px solid #fff;
+}
+
+.btn-default:active {
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+}

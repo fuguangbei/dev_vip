@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+	<div class="profiles">
+		<label for=''>登录状态: </label>
+		{% if user.is_authenticated %}
+			<label for='user'>username:</label>
+			<span id="user">{{user.username}}</span>
+			<label for='name'>nickname: </label>
+			<span id="name">{{ user.profile.nickname }}</span>
+		{% else %}
+			<span id="anonymous">未登录</span>
+		{% endif %}
+	</div>
+<input type="text" id="phone" placeholder='phone number'>
+<input type="text" id="pin" placeholder='PIN'>
+<button id='1'>get PIN</button>
+<button id='2'>Login</button>
+<button id="3">Logout</button>
+
+</body>
+<script src='{%static "assets/js/jquery.min.js"%}'></script>
+<script type="text/javascript">
+$(document).on('ready', function () {
+	var $btn_pin = $('button#1'),
+		$btn_login = $('button#2'),
+		$btn_logout = $('button#3'),
+		$phone = $('input#phone'),
+		$pin = $('input#pin')
+
+	$btn_pin.on('click', function (e) {
+		if (!$phone.val()) {
+			alert('输入手机号')
+			return 
+		}
+		$.ajax({
+			url: 'pin/'+$phone.val(),
+			type: 'get',
+			success: function (data) {
+				$pin.val(data.PIN)
+				console.log(data)
+			},
+			error: function (err) {
+				console.log('when trying to get PIN from server: ')
+				console.log(err)
+				alert(err.responseText)
+			}
+		})
+	})
+
+	$btn_login.on('click', function (e) {
+		$.ajax({
+			url: '/api/v1/login',
+			type: 'post',
+			data: {
+				'phone_number': $phone.val(),
+				'PIN': $pin.val()
+			},
+			success: function (data) {
+				console.log(data)
+				alert(data)
+			},
+			error: function (err) {
+				console.log(err)
+				alert(err.responseText)
+			}
+		})
+	})
+
+	$btn_logout.on('click', function (e) {
+		$.ajax({
+			url: '/api/v1/logout',
+			type: 'get',
+			success: function (msg) {
+				alert(msg)
+			},
+			error: function (xhr) {
+				alert(xhr.responseText)
+			}
+		})
+	})
+})
+</script>
+</html>

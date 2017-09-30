@@ -1,0 +1,466 @@
+/*----------------hotel detail*/
+.h-detail-img {
+  margin-top: 44px;
+}
+
+.h-detail-text {
+  margin-top: 2rem;
+  color: #555;
+  line-height: 2.4rem;
+  text-align: justify;
+}
+
+.p-dark {
+  font-weight: 600;
+}
+
+.icon-text {
+  margin-top: 2rem;
+}
+
+.h-detail-icon img {
+  width: 90%;
+}
+
+.h-detail-info h3 {
+  margin-bottom: 0.3rem;
+  color: #141414;
+  font-weight: normal;
+}
+
+.h-detail-info p {
+  margin-top: 0;
+  color: #555;
+}
+
+/*-----------------disney&concert&find&sapce detail*/
+/*disney-cover*/
+.disney-cover img {
+  width: 100%;
+  background-color: #019875;
+}
+
+.d-cover-txt {
+  margin: 0 1em;
+}
+
+.d-cover-tit {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.ticket-price {
+  margin-bottom: 1em;
+  display: block;
+}
+
+.ticket-price i {
+  font-style: normal;
+  letter-spacing: -1px;
+}
+
+.tk-num {
+  font-size: 2rem;
+  color: #3987d5;
+  line-height: inherit;
+}
+
+.tk-time {
+  line-height: 3.4rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.seat-num {
+  color: #3987d5;
+  font-size: larger;
+}
+
+/*tabs*/
+.am-tabs-bd .am-tab-panel {
+  padding-bottom: 4em !important;
+}
+
+.disney-tabs-nav {
+  text-align: center;
+  font-weight: bold;
+  width: auto !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.disney-tabs-nav li {
+  padding: 0;
+}
+
+.disney-tabs-nav li a {
+  margin-right: 0;
+  font-weight: normal;
+  color: #333;
+}
+
+.disney-tabs-nav .am-active > a {
+  font-weight: bold;
+}
+
+.bd-intro-tit {
+  display: block;
+  margin-top: 1em;
+  text-indent: 2.2rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.tit-1 {
+  background: url("../i/disney-vip@3x.png") 0 4px no-repeat;
+  background-size: 17px;
+}
+
+.tit-2 {
+  background: url("../i/disney-pay@3x.png") 0 3px no-repeat;
+  background-size: 16px;
+}
+
+.tit-3 {
+  background: url("../i/icon-map-maker@3x.png") 0 3px no-repeat;
+  background-size: 1.6rem;
+}
+
+.tit-3 h2, .tit-4 h2 {
+  font-weight: normal;
+}
+
+.tit-4 {
+  background: url("../i/30@3x.png") 0 3px no-repeat;
+  background-size: 1.6rem;
+}
+
+.concert-time, .concert-building {
+  padding-left: 0.4rem;
+}
+
+.concert-address {
+  display: block;
+  color: #999;
+}
+
+.bd-intro-detail img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.bd-intro-detail h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: normal;
+}
+
+.bd-intro-detail h3 {
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: normal;
+  margin-top: 1rem;
+  padding-top: 0;
+}
+
+.bd-intro-detail p {
+  color: #666;
+  line-height: 2.6rem;
+  margin: 0 0 1rem 0;
+  text-align: justify;
+}
+
+/*disney-footer*/
+.disney-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 44px;
+  z-index: 999;
+}
+
+.icon-footer {
+  text-align: center;
+  background-color: #fff;
+}
+
+.footer-heart-icon {
+  height: 27px;
+  line-height: 27px;
+  margin-top: 9px;
+  background: url("../i/heart-o@3x.png") center no-repeat;
+  background-size: auto 24px;
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+}
+
+.disney-footer [class*=am-u-] {
+  height: 100%;
+}
+
+.disney-footer .am-btn {
+  width: 100%;
+  height: inherit;
+  font-size: 1.25em;
+  padding: 0;
+}
+
+/*----------------find detail*/
+
+.find-tit {
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.find-tit h2 {
+  margin-bottom: 0;
+  font-weight: normal;
+  color: #141414;
+  font-size: 1.8rem;
+}
+
+.find-tit time {
+  color: #b3b3b3;
+  font-size: 1.2rem;
+}
+
+.heart-right {
+  height: 27px;
+  line-height: 27px;
+  background: url("../i/heart-o@3x.png") center no-repeat;
+  background-size: auto 24px;
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+}
+
+.heart-right-active {
+  background: url("../i/heart-full@3x.png") center no-repeat !important;
+  background-size: auto 24px !important;
+}
+
+.find-text-con img {
+  width: 100%;
+}
+
+/*comment*/
+
+.comment-tit {
+  margin: 1.2rem 0 0.6rem 0;
+  color: #666;
+  letter-spacing: -1px;
+}
+
+.comment-tit img {
+  height: 1.6rem;
+  display: inline-block;
+  margin-top: -0.4rem;
+
+}
+
+.comment-tit i {
+  font-style: normal;
+}
+
+.comment-border {
+  border-bottom: 1px dotted #f0f0f0;
+}
+
+.comment-last {
+  border: none !important;
+}
+
+.comment-con p {
+  color: #555;
+}
+
+.comment-name {
+  margin-top: 0.8rem;
+  line-height: 2rem;
+  margin-bottom: -0.4rem;
+}
+
+.comment-date {
+
+  color: #b3b3b3;
+  font-size: 1.3rem;
+}
+
+.margin-left {
+  margin-left: -0.5rem;
+}
+
+/*footer-input*/
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.find-main {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 49px;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+.c-detail-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 49px;
+  padding: 0.5rem;
+  background-color: #fff;
+}
+
+.input-con {
+  vertical-align: middle;
+  width: 100%;
+  display: inline-block;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.c-detail-footer .am-input-group .am-form-field {
+  border: 0;
+}
+
+.c-detail-footer .am-input-group .am-form-field:focus,.c-detail-footer .am-input-group .am-form-field:active {
+  border: none;
+  box-shadow: none;
+}
+
+.c-detail-footer .am-input-group button {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.c-detail-footer .am-input-group button:focus,.c-detail-footer .am-input-group button:active{
+  border:none;
+  box-shadow: none;
+}
+
+/*find-comments*/
+.comment-avatar{
+  margin-right: -1.5rem!important;
+}
+@media(max-width: 320px){
+  .comment-avatar{
+    margin-right: -0.8rem!important;
+  }
+}
+.post-photo {
+  margin: 1.2rem 0 0.9rem 0;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  display: block;
+}
+
+.post-time {
+  margin-top: 1.7rem;
+  font-size: 1.2rem;
+  color: #999;
+  text-align: right;
+}
+
+.circle-pic img {
+  width: 100%;
+}
+
+.circle-text p {
+  margin: 0.8rem 0 1.2rem 0;
+}
+
+.text-dark {
+  color: #141414;
+}
+
+.text-light {
+  color: #666;
+}
+
+.from-con {
+  margin-bottom: 1rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.from-con p {
+  color: #141414;
+  background-color: #f8f8f8;
+  margin: 0 0 0.5rem 0;
+}
+
+.from-person {
+  color: #666;
+}
+
+/*-----------------------------aerospace detail*/
+
+.space-con {
+  width: 100%;
+  overflow: hidden;
+}
+
+.space-margin {
+  margin-bottom: 7rem;
+}
+
+.bd-intro-detail ul {
+  padding-left: 2rem;
+  margin: 0;
+}
+
+.bd-intro-detail ul li {
+  text-align: justify;
+  padding-right: 1rem;
+  padding-bottom: 0.4rem;
+  background-size: 6px 6px;
+  text-indent: -0.4rem;
+  list-style: disc;
+}
+
+/*find comment tips*/
+.shake {
+  animation: shake 0.3s;
+  -moz-animation: shake 0.3s; /* Firefox */
+  -webkit-animation: shake 0.3s; /* Safari and Chrome */
+  -o-animation: shake 0.3s; /* Opera */
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+  10%, 50%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    -o-transform: translate3d(-10px, 0, 0);
+    -moz-transform: translate3d(-10px, 0, 0);
+    -ms-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0)
+  }
+  30%, 70% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    -o-transform: translate3d(10px, 0, 0);
+    -moz-transform: translate3d(10px, 0, 0);
+    -ms-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0)
+  }
+}
+
+.am-modal-href {
+  font-size: 1.6rem;
+}
+

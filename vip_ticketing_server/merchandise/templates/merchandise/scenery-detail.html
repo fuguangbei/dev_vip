@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--不识别电话号码和邮箱-->
+  <meta name="format-detection" content="telephone=no; email=no"/>
+  <!--网站开启对 web app 程序的支持-->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <!--状态栏颜色-->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- 使用 webkit 引擎渲染 -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>详情</title>
+
+  <!--CSS-->
+  <link rel="stylesheet" href='{%static "assets/css/amazeui.min.css"%}'>
+  <link rel="stylesheet" href='{%static "assets/css/common.css"%}'>
+  <link rel="stylesheet" href='{%static "assets/css/detail.css"%}'>
+</head>
+<body>
+
+<article>
+  <!--disney-cover-->
+  <header>
+    <div class="am-g disney-cover ui-border-b">
+      <img src="{% static 'assets/i/cover.png' %}">
+      <div class="d-cover-txt">
+        <div class="d-cover-tit"></div>
+        <div class="ticket-price">
+          <span class="tk-num">¥<i></i>元</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--tab-->
+  <section>
+    <div class="am-tabs disney-tabs" data-am-tabs="{noSwipe: 1}">
+
+      <ul class="am-tabs-nav am-nav am-nav-tabs am-g disney-tabs-nav ui-border-b">
+        <li class="am-u-sm-6"><a href="#tab1">VIP特权</a></li>
+        <li class="am-u-sm-6"><a href="#tab2">购买须知</a></li>
+      </ul>
+
+      <div class="am-tabs-bd">
+
+        <div class="am-tab-panel" id="tab1">
+          <article>
+            <div class="bd-intro-tit tit-2">套餐介绍</div>
+            <div class="bd-intro-detail package-intro">
+            </div>
+          </article>
+        </div>
+        <div class="am-tab-panel" id="tab2">
+          <article>
+            <div class="bd-intro-detail purchase-notes">
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!--footer-->
+<footer>
+  <div class="am-g disney-footer ui-border-t">
+    <div class="am-u-sm-4 am-padding-0 icon-footer">
+      <div class="footer-heart-icon ">
+      </div>
+    </div>
+    <div class="am-u-sm-8 am-padding-0 button_footer">
+      <button type="button" class="am-btn am-btn-primary pay-btn">立即购买</button>
+    </div>
+  </div>
+</footer>
+
+<script src='{%static "assets/js/jquery.min.js"%}'></script>
+<script src='{%static "assets/js/amazeui.min.js"%}'></script>
+<script src='{%static "assets/js/constants.js"%}'></script>
+<script src='{%static "assets/js/ticket-detail.js"%}'></script>
+
+</body>
+</html>

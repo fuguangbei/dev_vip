@@ -1,0 +1,94 @@
+{% load staticfiles %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			圈子
+			<small>查看与管理内容</small>
+		</h1>
+	</section>
+
+	<!-- Main content -->
+	<section class="content" id='moments'>
+		<div class="row">
+			<div class="col-md-7 col-xs-12">
+				<div class="box box-primary box-solid">
+					<div class="box-header">
+						<h3 class="box-title">圈子发布列表</h3>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type='button' data-widget='collapse'>
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<div class="box-body">
+						<table class="table table-hover" id='moments-list'>
+							<thead>
+								<tr>
+									<th>内容</th>
+									<th>发布人</th>
+									<th>审核通过</th>
+									<th>发布时间</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for post in list %}
+								<tr class='clickable post-item' data-post='{{post.json_str}}'>
+									<td text>{{ post.text }}</td>
+									<td>{{post.publisher.name}}</td>
+									<td class='text-center boolean-color' data-value='{{post.verified}}'>
+									{% if post.verified %}
+										<i class="fa fa-check"></i>
+									{% else %}
+										<i class="fa fa-close"></i>
+									{% endif %}
+									</td>
+									<td>{{post.publish_time}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5 col-xs-12">
+				<div class="box box-info">
+					<div class="box-header">
+						<h3 class="box-title">圈子详情</h3>
+					</div>
+					<div class="box-body" id='moment-detail'>
+						<img class="img-responsive" src='' data-target='image'></img>
+						<p class='text-muted' data-target='text'></p>
+						<ul class="list-group list-group-unbordered">
+							<li class="list-group-item">
+								<b>发布人</b>
+								<a class="pull-right" data-target='publisher'>Ethan</a>
+							</li>
+							<li class="list-group-item">
+								<b>发布时间</b>
+								<span class="pull-right" data-target='publish_time'>
+									2016年06月24日, 08时02分56秒
+								</span>
+							</li>
+							<li class="list-group-item hidden">
+								<b>原作者</b>
+								<a class="pull-right" data-target='author'>
+								</a>
+							</li>
+							<li class="list-group-item hidden" >
+								<b>转发文字</b>
+								<p data-target='caption'></p>
+							</li>
+							<li class="list-group-item">
+								<b>审核</b>
+								<input class="sweetch pull-right" type='checkbox'></input>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>

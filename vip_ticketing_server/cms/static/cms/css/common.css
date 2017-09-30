@@ -1,0 +1,42 @@
+.invisible-file-upload {
+	position: absolute;
+	left: -9999px;
+}
+td[agent='是'] {
+	color: #00a65a;
+}
+td[agent='否'] {
+	color: #f56954;
+}
+td.user-info,
+td.order-info {
+	cursor: pointer;
+}
+td.user-info:hover {
+	font-weight: bold;
+}
+td.order-info:hover {
+	opacity: .6;
+}
+
+.clickable {
+	cursor: pointer;
+}
+.amount-rmb:before {
+	content: '￥';
+}
+*[class*=color-status][data-status="-1"] {
+	color: #777;
+}
+*[class*=color-status][data-status="0"] {
+	color: #f56954;
+}
+*[class*=color-status][data-status="1"] {
+	color: #00a65a;
+}
+.boolean-color[data-value=True] {
+	color: #00a65a;
+}
+.boolean-color[data-value=False] {
+	color: #f56954;
+}

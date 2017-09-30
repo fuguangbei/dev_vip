@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <!--不识别电话号码和邮箱-->
+  <meta name="format-detection" content="telephone=no; email=no"/>
+  <!--网站开启对 web app 程序的支持-->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <!--状态栏颜色-->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!--放置主屏幕上 icon-->
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- 使用 webkit 引擎渲染 -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>VIP注册</title>
+  <!--CSS-->
+  <link rel="stylesheet" href='{% static "assets/css/amazeui.min.css" %}'>
+  <link rel="stylesheet" href='{% static "assets/css/common.css" %}'>
+  <link rel="stylesheet" href='{% static "assets/css/regiter.css" %}'>
+</head>
+
+<body ontouchstart>
+<div class="rg-con am-u-sm-12">
+
+    <h1>注册成功!</h1>
+    <p class="dl-text">下载VIP尊享生活APP享受尊享生活吧!</p>
+   <button type="submit" class="am-btn am-btn-primary btn-blue">立即下载</button>
+
+
+</div>
+
+<script src='{%static "assets/js/jquery.min.js"%}'></script>
+<script src='{%static "assets/js/amazeui.min.js"%}'></script>
+</body>
+</html>

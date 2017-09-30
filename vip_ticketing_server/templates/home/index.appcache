@@ -1,0 +1,39 @@
+CACHE MANIFEST
+# version 2016-07-04 13:10:13
+
+CACHE:
+# 需要缓存的列表
+
+/home/index.html
+/static/assets/css/amazeui.min.css
+/static/assets/css/app.css
+/static/assets/css/common.css
+/static/assets/css/swiper.min.css
+
+/static/assets/js/amazeui.min.js
+/static/assets/js/index.js
+/static/assets/js/constants.js
+/static/assets/js/jquery.min.js
+/static/assets/js/swiper.jquery.min.js
+
+/static/assets/i/30@3x.png
+/static/assets/i/app-icon72x72@2x.png
+/static/assets/i/concert@3x.jpg
+/static/assets/i/cover.png
+/static/assets/i/disney@3x.jpg
+/static/assets/i/disney-icon@2x.png
+/static/assets/i/disney-pay@3x.png
+/static/assets/i/disney-vip@3x.png
+/static/assets/i/heart-full@3x.png
+/static/assets/i/heart-o@3x.png
+/static/assets/i/icon-map-maker@3x.png
+/static/assets/i/icon-search@3x.png
+/static/assets/i/load.png
+/static/assets/i/space@3x.jpg
+
+NETWORK:
+# 不需要缓存的
+*
+
+FALLBACK:
+# 访问缓存失败后，备用访问的资源，第一个是访问源，第二个是替换文件*.html /offline.html

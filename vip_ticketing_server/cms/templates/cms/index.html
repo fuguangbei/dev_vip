@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monstar CMS</title>
+  {% include "cms/headers.html" %}
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-green sidebar-mini">
+<div class="wrapper">
+  {% include "cms/top_bar.html" %}
+  
+  {% include "cms/main_side_bar.html" %}
+
+  {% include "cms/index_content.html" %}
+
+  {% include "cms/main_footer.html" %}
+
+  {% include "cms/control_side_bar.html" %}
+</div>
+<!-- ./wrapper -->
+
+{% include "cms/common_js_includes.html" %}
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+
+<script src='{% static "cms/js/index.app.js" %}'></script>
+
+</body>
+</html>

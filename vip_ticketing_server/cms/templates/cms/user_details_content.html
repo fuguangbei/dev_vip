@@ -1,0 +1,192 @@
+{% load staticfiles %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			用户信息
+			<small>用户详细信息</small>
+		</h1>
+	</section>
+
+	<!-- Main content -->
+	<section class="content" id='user_details'>
+		<div class="row">
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="box box-primary">
+					<div class="box-body box-profile">
+						<img class="profile-user-img img-responsive img-circle" 
+							src='{% if user_data.avatar %}{{user_data.avatar}} {% else %} {% static "assets/i/app-icon72x72@2x.png" %} {% endif %}'></img>
+						<h3 class="profile-username text-center">
+							{% if user_data.gender == '男' %}
+							<i class='fa fa-mars'></i>
+							{% elif user_data.gender == '女' %}
+							<i class='fa fa-venus'></i>
+							{% else %}
+							{% endif %}
+							{{user_data.nickname}}
+						</h3>
+						<p class="text-muted text-center">{{user_data.phone_number}}</p>
+						<ul class="list-group list-group-unbordered">
+							<li class="list-group-item">
+								<b>邀请人</b>
+								<a class="pull-right" id='promoter' 
+									href='/cms/users/{{user_data.promoter.id}}/'>
+									{{user_data.promoter.nickname}}
+								</a>
+							</li>
+							<li class="list-group-item">
+								<b>标签</b>
+								<p>
+									{% for i in user_data.labels %}
+									<span class="label label-primary">{{i.text}}</span>
+									{% endfor %}
+								</p>
+							</li>
+							<li class="list-group-item">
+								<b>代理</b>
+								<span class="pull-right">
+									{{user_data.agent}}
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<div class="info-box bg-blue clickable">
+					<span class="info-box-icon">
+						<i class="fa fa-money"></i>
+					</span>
+					<div class="info-box-content">
+						<span class="info-box-text">总消费</span>
+						<span class="info-box-number" id='consumption'>
+							{{user_purchase_amount}}
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<div class="info-box bg-yellow clickable">
+					<span class="info-box-icon">
+						<i class="fa fa-share-alt"></i>
+					</span>
+					<div class="info-box-content">
+						<span class="info-box-text">推广量</span>
+						<span class="info-box-number">{{promote_count}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<div class="info-box bg-green clickable">
+					<span class="info-box-icon">
+						<i class="fa fa-credit-card"></i>
+					</span>
+					<div class="info-box-content">
+						<span class="info-box-text">用户总收益</span>
+						<span class="info-box-number" id='withdraw'>{{total_income}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<div class="info-box bg-aqua clickable">
+					<span class="info-box-icon">
+						<i class="fa fa-credit-card"></i>
+					</span>
+					<div class="info-box-content">
+						<span class="info-box-text">积分</span>
+						<span class="info-box-number" id='withdraw'>{{user_data.credits}}</span>
+					</div>
+				</div>
+			</div>
+			{% if agent_application %}
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<div class="alert alert-danger alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<h4>
+						<i class="icon fa fa-info"></i>
+						代理申请
+					</h4>
+					<p>该用户在{{agent_application.applied_time}}申请成为代理</p>
+					<button class="btn btn-danger" id='agent-app-ac' data-target='{{agent_application.id}}'>通过</button>
+					<button class="btn btn-danger pull-right" id='agent-app-dc' data-target='{{agent_application.id}}'>拒绝</button>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+		<div class="row">
+			<div class="col-md-7 col-xs-12">
+				<div class="box box-primary">
+					<div class="box-header">
+						<h3 class="box-title">消费订单</h3>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type='button' data-widget='collapse'>
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<div class="box-body">
+						<table class="table table-hover" id='table-purchases'>
+							<thead>
+								<tr role='row'>
+									<th>订单号</th>
+									<th>商品类型</th>
+									<th>商品名称</th>
+									<th>购买日期</th>
+									<th>总价</th>
+									<th>数量</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for i in user_purchases %}
+								<tr class='clickable' data-target='{{i.order_number}}'>
+									<td>{{i.order_number}}</td>
+									<td>{{i.ticket.type}}</td>
+									<td>{{i.ticket.title}}</td>
+									<td>{{i.purchase_date}}</td>
+									<td class='amount'>{{i.amount}}</td>
+									<td>{{i.count}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5 col-xs-12">
+				<div class="box box-warning">
+					<div class="box-header">
+						<h3 class="box-title">推广用户</h3>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type='button' data-widget='collapse'>
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<div class="box-body">
+						<table class="table table-hover" id='table-promotes'>
+							<thead>
+								<tr>
+									<th>昵称</th>
+									<th>手机号</th>
+									<th>总消费</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for i in user_promotes %}
+								<tr class='clickable' data-id='{{i.id}}'>
+									<td>{{i.nickname}}</td>
+									<td>{{i.phone_number}}</td>
+									<td class='amount'>{{i.amount}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+
+</div>

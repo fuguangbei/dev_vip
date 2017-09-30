@@ -1,0 +1,257 @@
+{% load staticfiles %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			订单详情
+			<small>查看与管理订单详细资料</small>
+		</h1>
+	</section>
+
+	<!-- Main content -->
+	<section class="content">
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+				<div class="box box-primary" id='order-info'>
+					<div class="box-header with-border">
+						<h3 class='box-title'>订单基本信息</h3>
+						<div class="box-tools pull-right">
+							<button class="btn-box-tool btn" data-widget='collapse'>
+								<i class="fa-minus fa"></i>
+							</button>
+						</div>
+					</div>
+					<div class="box-body box-profile">
+						<h3 class='text-center'>
+							{{order_info.order_number}}
+							{% if user.usermerchandise.level == 1 or user.is_superuser %}
+								<span class="label 
+									label-{% if withdraw_info.status_code == -1 %}danger{% elif withdraw_info.status_code == 0 %}warning{% else %}success{% endif %}" 
+									style='font-size: 14px;'>
+								{% if withdraw_info.status_code  == -1 %}
+									未提现
+								{% elif withdraw_info.status_code == 0 %}
+									提现申请中
+								{% else %}
+									已提现
+								{% endif %}
+								</span>
+							{% endif %}
+						</h3>
+						<!-- <p class="text-muted text-center">订单号</p> -->
+						<ul class="list-group">
+							<li class="list-group-item">
+								<b>购买人</b>
+								<a class="pull-right clickable" href='/cms/users/{{order_info.purchaser.id}}'>
+									{{order_info.purchaser.nickname}}
+								</a>
+							</li>
+							<li class="list-group-item">
+								<b>购买数量</b>
+								<a class="pull-right">{{order_info.count}}</a>
+							</li>
+							<li class="list-group-item">
+								<b>总价</b>
+								<a class="pull-right amount">{{order_info.amount}}</a>
+							</li>
+							<li class="list-group-item">
+								<b>联系电话</b>
+								<a class="pull-right phone">{{order_info.contact_phone_number}}</a>
+							</li>
+							<li class="list-group-item">
+								<b>购买日期</b>
+								<a class="pull-right">{{order_info.purchase_date}}</a>
+							</li>
+							<li class="list-group-item">
+								<b>商品类型</b>
+								<a class="pull-right">
+									{% if order_info.ticket.type == 'disney' %}
+									迪士尼卡
+									{% elif order_info.ticket.type == 'concert' %}
+									演唱会
+                                    {% elif order_info.ticket.type == 'scenery' %}
+									景区
+									{% endif %}
+								</a>
+							</li>
+							{% if order_info.ticket.type == 'disney' %}
+							<li class="list-group-item">
+								<b>登记身份证号</b>
+								<a class="pull-right">{{order_info.identification}}</a>
+							</li>
+							<li class="list-group-item">
+								<b>需要接送</b>
+								<a class="pull-right">
+									{% if order_info.pickup %}
+									<i class="ion ion-checkmark-round"></i>
+									是
+									{% else %}
+									<i class="ion ion-close-round"></i>
+									否
+									{% endif %}
+								</a>
+							</li>
+							{% elif order_info.ticket.type == 'concert' %}
+							<li class="list-group-item">
+								<b>送票地址</b>
+								<p>{{order_info.ticket.shipping_address}}</p>
+							</li>
+							<li class="list-group-item">
+								<b>快递状态</b>
+								<a class="pull-right">{{order_info.shipping_status}}</a>
+							</li>
+								{% if order_info.shipping_status == '已寄出' %}
+							<li class="list-group-item">
+								<b>快递单号</b>
+								<a class="pull-right">{{order_info.shipping_code}}</a>
+							</li>
+								{% endif %}
+                            {% elif order_info.ticket.type == 'scenery' %}
+							<li class="list-group-item">
+								<b>登记身份证号</b>
+								<a class="pull-right">{{order_info.identification}}</a>
+							</li>
+							<li class="list-group-item">
+								<b>需要接送</b>
+								<a class="pull-right">
+									{% if order_info.pickup %}
+									<i class="ion ion-checkmark-round"></i>
+									是
+									{% else %}
+									<i class="ion ion-close-round"></i>
+									否
+									{% endif %}
+								</a>
+							</li>
+							{% endif %}
+
+							{% if user.usermerchandise.level < 3 and not user.is_superuser %}
+							<li class="list-group-item">
+								<b>收益</b>
+								<span class="pull-right amount">
+									{{withdraw_info.income}}
+								</span>
+							</li>
+							{% endif %}
+							{% if user.usermerchandise.level == 1 or user.is_superuser %}
+								{% if withdraw_info.status_code > -1 %}
+								<li class="list-group-item">
+									<b>申请提现日期</b>
+									<span class="pull-right">{{withdraw_info.apply_time}}</span>
+								</li>
+								{% endif %}
+								{% if withdraw_info.status_code > 0 %}
+								<li class="list-group-item">
+									<b>提现日期</b>
+									<span class="pull-right">{{withdraw_info.withdraw_time}}</span>
+								</li>
+								{% endif %}
+							{% endif %}
+						</ul>
+						<div class="controls text-center">
+							{% if not user.is_superuser and user.usermerchandise.level == 1 and withdraw_info.status_code == -1 %}
+							<button class="btn btn-flat btn-primary btn-lg btn-block" id='withdraw'>
+								申请提现
+							</button>
+							{% endif %}
+							{% if user.is_superuser and withdraw_info.status_code == 0 %}
+							<p class='lead'>
+								<strong>{{withdraw_info.beneficiary.nickname}}</strong>
+								申请该订单提现, 
+								金额<strong class='amount'>{{withdraw_info.income}}</strong>,
+								<br>
+								申请时间: {{withdraw_info.apply_time}}
+							</p>
+							<button class="btn btn-flat btn-primary btn-lg btn-block" id='confirm-withdraw'>
+								确认提现
+							</button>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12">
+				<div class="box box-info">
+					<div class="box-header with-border">
+						<h3 class="box-title">商品信息</h3>
+						<div class="box-tools pull-right">
+							<button class="btn-box-tool btn" data-widget='collapse'>
+								<i class="fa-minus fa"></i>
+							</button>
+						</div>
+					</div>
+					<div class="box-body box-profile">
+						<h3 class="text-center">{{order_info.ticket.title}}</h3>
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<ul class="list-group list-group-unbordered">
+									<li class="list-group-item">
+										<b>票价</b>
+										<span class="pull-right amount">{{order_info.ticket.price}}</span>
+									</li>
+									<li class="list-group-item">
+										<b>余票</b>
+										<span class="pull-right">{{order_info.ticket.remaining}}</span>
+									</li>
+									{% if order_info.ticket.type == 'concert' %}
+									<li class="list-group-item">
+										<b>时间</b>
+										<span class="pull-right">{{order_info.ticket.time}}</span>
+									</li>
+									{% endif %}
+								</ul>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<img class="img-responsive" src='{{order_info.ticket.detail_cover}}'></img>
+							</div>
+						</div>
+						<br>
+						<div class="nav-tabs-custom">
+							<ul class="nav nav-tabs">
+								<li>
+									<a href="#tab1" data-toggle='tab' aria-expanded>VIP特权</a>
+								</li>
+								<li>
+									<a href="#tab2" data-toggle='tab' aria-expanded>购买须知</a>
+								</li>
+								<li>
+									<a href="#tab3" data-toggle='tab' aria-expanded>套餐介绍</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane" id='tab1'>
+									<div class="col-xs-12 html-render">
+										{% if order_info.ticket.type == 'disney' %}
+										{{order_info.ticket.vip_channel}}
+										{% elif order_info.ticket.type == 'concert' %}
+										{{order_info.ticket.vip_seating}}
+										{% endif %}
+									</div>
+								</div>
+
+								<div class="tab-pane" id='tab2'>
+									<div class="col-xs-12 html-render">
+										{{order_info.ticket.purchase_notes}}
+									</div>
+								</div>
+								<div class="tab-pane" id='tab3'>
+									<div class="col-xs-12 html-render">
+										{% if order_info.ticket.type == 'disney' %}
+										{{order_info.ticket.package_introduction}}
+										{% elif order_info.ticket.type == 'concert' %}
+										{{order_info.ticket.performance_introduction}}
+                                        {% elif order_info.ticket.type == 'scenery' %}
+										{{order_info.ticket.performance_introduction}}
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
